@@ -62,3 +62,34 @@ module.exports = {
     from: envVars.EMAIL_FROM,
   },
 };
+
+// module.exports = {
+//   env: "dev",
+//   port: 3001,
+//   mongoose: {
+//     url: "mongodb://127.0.0.1:27017/node-boilerplate",
+//     options: {
+//       useCreateIndex: true,
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     },
+//   },
+//   jwt: {
+//     secret: "envVars.JWT_SECRET",
+//     accessExpirationMinutes: 30,
+//     refreshExpirationDays: 30,
+//     resetPasswordExpirationMinutes: 10,
+//     verifyEmailExpirationMinutes: 10,
+//   },
+//   email: {
+//     smtp: {
+//       host: "",
+//       port: 1222,
+//       auth: {
+//         user: "envVars.SMTP_USERNAME",
+//         pass: "envVars.SMTP_PASSWORD",
+//       },
+//     },
+//     from: "envVars.EMAIL_FROM",
+//   },
+// };

@@ -1,0 +1,35 @@
+service: dev-nodejs-api
+
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  memorySize : 512
+  stage: dev
+  timeout : 120
+  region: ap-southeast-1
+
+functions:
+  testNodejsApi:
+    handler: handler.testNodejsApi
+    description: test function.
+    events:
+      # for one method
+      # - http: 
+      #     path: abc
+      #     method: post
+
+      # mutil method
+      - http: 
+          path: ANY /{proxy+}
+          method: ANY /
+      #- enviroment :
+          #  PORT: 3000
+          #  MONGODB_URL: mongodb://127.0.0.1:27017/node-boilerplate
+          #  JWT_SECRET: thisisasamplesecret
+          #  JWT_ACCESS_EXPIRATION_MINUTES: 30
+          #  JWT_REFRESH_EXPIRATION_DAYS: 30
+          #  JWT_RESET_PASSWORD_EXPIRATION_MINUTES: 10
+          #  JWT_VERIFY_EMAIL_EXPIRATION_MINUTES: 10
+

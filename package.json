@@ -1,18 +1,22 @@
+
 {
+
   "name": "create-nodejs-express-app",
   "version": "1.7.0",
-  "description": "Create a Node.js app for building production-ready RESTful APIs using Express, by running one command",
+  "description": "RESTful APIs using Express",
   "bin": "bin/createNodejsApp.js",
   "main": "src/index.js",
-  "repository": "https://github.com/hagopj13/node-express-boilerplate.git",
-  "author": "Hagop Jamkojian <hagopj13@gmail.com>",
+  "repository": "https://github.com",
+  "author": "noname9xnd",
   "license": "MIT",
   "engines": {
     "node": ">=12.0.0"
   },
   "scripts": {
     "start": "pm2 start ecosystem.config.json --no-daemon",
-    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "deploy" : "serverless deploy",
+    "dev": "nodemon --inspect src/index.js",
+    "dev2": "cross-env NODE_ENV=development nodemon --inspect src/index.js",
     "test": "jest -i --colors --verbose --detectOpenHandles",
     "test:watch": "jest -i --watchAll",
     "coverage": "jest -i --coverage",
@@ -72,7 +76,9 @@
     "swagger-ui-express": "^4.1.6",
     "validator": "^13.0.0",
     "winston": "^3.2.1",
-    "xss-clean": "^0.1.1"
+    "xss-clean": "^0.1.1",
+    "serverless-http": "^2.7.0",
+    "aws-serverless-express": "^3.4.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.7",
@@ -90,6 +96,8 @@
     "node-mocks-http": "^1.8.0",
     "nodemon": "^2.0.0",
     "prettier": "^2.0.5",
-    "supertest": "^6.0.1"
+    "supertest": "^6.0.1",
+    "serverless-http": "^2.7.0",
+    "aws-serverless-express": "^3.4.0"
   }
 }
